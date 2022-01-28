@@ -3,27 +3,26 @@
 #include <time.h>
 #include "tme1_exo2p1.h" 
 
-/* 2.1 
-Les deux fonctions sont, vis-à-vis de l'allocation mémoire, 
-équivalentes. Mais la seconde option permet de ne pas occuper 
-notre return, et donc de faire retourner à la fonction une autre valeur (commme un entier par exemple) qui pourra par la suite nous permettre de faire des tests si besoin (pour voir si le malloc s'est bien passé par exemple). 
-*/
+/*Fonction permettant d'allouer la mémoire à un tableau pointé par T de taille n*/
 int alloue_tableau(int** T, int n){
 	*T = (int*)(malloc(n*sizeof(int)));
 	return (*T != NULL); /*Vérification du bon fonctionnement*/
 }
 
+/*Fonction permettant de désallouer la mémoire de tab*/
 int desalloue_tableau(int* tab){
 	free(tab);
 	return (tab == NULL);
 }
 
+/*Fonction permettant de remplir le tableau tab de taille taille avec des entiers aléatoires entre 0 et V (exclu)*/
 void remplir_tableau(int* tab, int taille, int V){
 	for (int i = 0; i<taille; i++){
 		tab[i] = rand()%(V);
 	}
 }
 
+/*Fonction permettant d'afficher le tableau tab*/
 void afficher_tableau(int* tab, int taille){
 	printf("[ ");
 	for (int i = 0; i<taille; i++){
@@ -31,8 +30,9 @@ void afficher_tableau(int* tab, int taille){
 	}printf(" ]\n");
 }
 
-/*2.2*/
 
+/*Les deux fonctions permettent de calculer la somme des carrés des différences des éléments de tab deux à deux. La première utilise directement
+la formule de l'énoncé, la seconde provient de la formule obtenue en 2.2.2(5) (sur le rapport)*/
 int somme_v1(int* tab,int taille){
 	int res = 0;
 	int val;
@@ -44,9 +44,6 @@ int somme_v1(int* tab,int taille){
 	}
 	return res;
 }
-/*La complexité est bien en O(n**2) : la première boucle fait n opérations,
-et la seconde boucle imbriquée en fait n aussi. Ainsi à chaque itération de
-la première on effectue n opérations.*/
 
 int somme_v2(int* tab, int taille){
 	int somme = 0;
