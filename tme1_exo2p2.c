@@ -41,26 +41,42 @@ void affiche_matrice(int** mat, int taille){
 }
 
 /*Fonction permettant de vérifier que tous les éléments de la matrice mat sont différents*/
-
-/*à partir de là franchement pour l'instant j'ai pas d'idées je verrai plus tard mais si tu veux jeter un oeil...*/
-
-int ligne_diff (int* ligne, int val, int taille){
-    for(int i = 0 ; i < taille ; i++){
-        if(val == ligne[i]){
-            return 0;
+/*en O(n^4)*/
+int mat_diff_v1(int** mat, int taille){
+    int val_courante;
+    int val_comparaison;
+    for(int i1 = 0; i1 < taille ; i1++){
+        for(int j1 = 0 ; j1 < taille ; j1++){
+            val_courante = mat[i1][j1];
+            for (int i2 = 0; i2 < taille; i2++){
+                for (int j2 = 0; j2 < taille; j2++){
+                    val_comparaison = mat[i2][j2];
+                    if (val_courante == val_comparaison){
+                        return false;
+                    }
+                }
+            }
         }
-    }
-    return 1;
+    } return true;
 }
 
-
-int mat_diff_v1(int** mat, int taille){
-    for(int i = 0; i < taille ; i++){
-        for(int il = 0 ; il < taille ; il++){
-            
-
+/*meilleure complexité connaissant V : O(n^2)*/
+int mat_diff_v2(int** mat, int taille,int V){
+    //création d'un tableau de taille V et le remplir de 0
+    int* tab_comparaison;
+    alloue_tableau(&tab_comparaison,V);
+    remplir_tableau(tab,V,0);
+    
+    int val_courante;
+    for (int i = 0; i < taille; i++){
+        for (int j = 0; j < taille; j++){
+            val_courante = mat[i][j];
+            if (tab_comparaison[val_courante] != 0){
+                return false;
+            }
+            tab_comparaison[val_courante] = 1;
         }
-    }
+    }return true;
 }
 
 
