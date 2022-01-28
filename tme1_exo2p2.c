@@ -45,13 +45,15 @@ void affiche_matrice(int** mat, int taille){
 int mat_diff_v1(int** mat, int taille){
     int val_courante;
     int val_comparaison;
+    int meme_element;
     for(int i1 = 0; i1 < taille ; i1++){
         for(int j1 = 0 ; j1 < taille ; j1++){
             val_courante = mat[i1][j1];
             for (int i2 = 0; i2 < taille; i2++){
                 for (int j2 = 0; j2 < taille; j2++){
                     val_comparaison = mat[i2][j2];
-                    if (val_courante == val_comparaison){
+                    meme_element = (i1==i2)&&(j1==j2);
+                    if (val_courante == val_comparaison)&&(!meme_element){
                         return 0;
                     }
                 }
