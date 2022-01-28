@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "tme1_exo2p1.h" 
+#include "fonctions_tableau.h" 
 
 /*Fonction permettant d'allouer la mémoire à un tableau pointé par T de taille n*/
 int alloue_tableau(int** T, int n){
