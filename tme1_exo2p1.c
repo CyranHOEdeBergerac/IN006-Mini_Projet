@@ -38,8 +38,9 @@ void afficher_tableau(int* tab, int taille){
     }
 }
 
-/*Fonction permettant de calculer la somme des carrés des différences entre les éléments du tableau pris deux à deux
-somme_v1 utilise la formule 2.2.1 et somme_v2 celle de 2.2.2*/
+/*Fonctions permettant de calculer la somme des carr'es des diff'erences entre les éléments du tableau pris deux à deux
+somme_v1 utilise la formule 2.2.1 et somme_v2 celle obtenue apre's simplification de la somme de 2.2.1 (voir document
+r'eponse 2.2.2(5))*/
 
 int somme_v1(int* tab, int taille){
     int res = 0;
@@ -51,15 +52,12 @@ int somme_v1(int* tab, int taille){
     return res;
 }
 
-
 int somme_v2(int*tab, int taille){
-    int res = 0;
-    int somme_x1x2;
-    for(int i = 0 ; i < taille){
-        res += 2 * (tab[i]*tab[i]);
-        somme_x1x2 = somme_x1x2 + tab[i];
+    int somme = 0;
+    int somme_carre = 0
+    for(int i = 0 ; i < taille ; i++){
+        somme += tab[i];               //On effectue les deux sommes de notre formule
+        somme_carre += tab[i]*tab[i];
     }
-    somme_x1x2 = 2 * (somme_x1x2*somme_x1x2);
-    res += somme_x1x2;
-    return res
+    return 2*somme_carre - 2* somme*somme;   //On en fait la somme avec les constantes calculées
 }
