@@ -2,6 +2,9 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
+#include<assert.h>
+#include "tme1_exo2p1.h"
 
 
 /*Fonction permettant d'allouer la mémoire pour un tableau de taille n 
