@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "tme1_exo2p1.h" 
+#include "fonctions_tableau.h" 
 
 /* 2.1 
 Les deux fonctions sont, vis-à-vis de l'allocation mémoire, 
