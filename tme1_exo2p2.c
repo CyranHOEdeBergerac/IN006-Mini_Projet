@@ -52,31 +52,33 @@ int mat_diff_v1(int** mat, int taille){
                 for (int j2 = 0; j2 < taille; j2++){
                     val_comparaison = mat[i2][j2];
                     if (val_courante == val_comparaison){
-                        return false;
+                        return 0;
                     }
                 }
             }
         }
-    } return true;
+    } 
+    return 1;
 }
 
 /*meilleure complexité connaissant V : O(n^2)*/
 int mat_diff_v2(int** mat, int taille,int V){
-    //création d'un tableau de taille V et le remplir de 0
+    /*On créé un tableau de taille V qu'on remplit de 0*/
     int* tab_comparaison;
     alloue_tableau(&tab_comparaison,V);
-    remplir_tableau(tab,V,0);
+    remplir_tableau(tab,V,1);
     
     int val_courante;
     for (int i = 0; i < taille; i++){
         for (int j = 0; j < taille; j++){
             val_courante = mat[i][j];
             if (tab_comparaison[val_courante] != 0){
-                return false;
+                return 0;
             }
             tab_comparaison[val_courante] = 1;
         }
-    }return true;
+    }
+    return 1;
 }
 
 
