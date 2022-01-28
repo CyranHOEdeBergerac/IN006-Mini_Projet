@@ -59,5 +59,5 @@ int somme_v2(int*tab, int taille){
         somme += tab[i];               //On effectue les deux sommes de notre formule
         somme_carre += tab[i]*tab[i];
     }
-    return 2*somme_carre - 2* somme*somme;   //On en fait la somme avec les constantes calculées
+    return 2*taille*somme_carre - 2* somme*somme;   //On en fait la somme avec les constantes calculées
 }
