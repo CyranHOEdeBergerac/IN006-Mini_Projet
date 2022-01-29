@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "tme1_exo2p1.h"            //On va se servir des fonctions de la partie précédente pour remplir les lignes de la matrice
+#include "fonctions_tableau.h"            //On va se servir des fonctions de la partie précédente pour remplir les lignes de la matrice
 
 
 /*Fonction permettant d'allouer un tableau à deux dimensions représentant une matrice de dimensions n×n en procédant par adresse
