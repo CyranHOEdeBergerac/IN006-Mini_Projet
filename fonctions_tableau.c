@@ -3,26 +3,32 @@
 #include <time.h>
 #include "fonctions_tableau.h" 
 
-/* 2.1 
-Les deux fonctions sont, vis-à-vis de l'allocation mémoire, 
-équivalentes. Mais la seconde option permet de ne pas occuper 
-notre return, et donc de faire retourner à la fonction une autre valeur (commme un entier par exemple) qui pourra par la suite nous permettre de faire des tests si besoin (pour voir si le malloc s'est bien passé par exemple). 
-*/
+/*Fonction allouant un tableau de taille n à l'adresse contenue dans T*/
 int alloue_tableau(int** T, int n){
 	*T = (int*)(malloc(n*sizeof(int)));
 	return (*T != NULL); /*Vérification du bon fonctionnement*/
 }
 
+/*Fonction désallouant la mémoire allouée au tableau tab*/
 int desalloue_tableau(int* tab){
 	free(tab);
 	return (tab == NULL);
 }
 
+/*Fonction remplissant le tableau tab de taille taille avec des valeurs aléatoires comprises etre 0 et V exclu*/
 void remplir_tableau(int* tab, int taille, int V){
 	for (int i = 0; i<taille; i++){
 		tab[i] = rand()%(V);
 	}
 }
+
+/*Fonction remplissant le tableau tab de taille taille avec la valeur V dans toutes ses cases*/
+void remplir_tableau_avec (int* tab, int taille, int V){
+	for(int i = 0 ; i < taille ; i++){
+		tab[i] = V;
+	}
+}
+	
 
 void afficher_tableau(int* tab, int taille){
 	printf("[ ");
