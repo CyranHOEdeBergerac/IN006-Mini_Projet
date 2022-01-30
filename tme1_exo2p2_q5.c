@@ -48,12 +48,12 @@ int mat_diff_v2(int** mat, int taille,int V){
 
 /*Main permettant comparaison par gnuplot*/
 int main(){
-    //int V = 1000; //choix 1 : fixer V pour toutes les itérations
+    int V = 50; //choix 1 : fixer V pour toutes les itérations
     FILE* fichier = fopen("sortie_vitesse.txt","w");
     for (int n=10; n < 10000; n = n+100){
         /*Création de la matrice*/
         int taille = n;
-        int V = n*10; //choix 2 : faire varier V selon la taille de la matrice (amène au pire des cas)
+        //int V = n*10; //choix 2 : faire varier V selon la taille de la matrice (amène au pire des cas)
         int** mat;
         alloue_matrice(&mat,taille);
         remplir_matrice(mat,taille,V);
