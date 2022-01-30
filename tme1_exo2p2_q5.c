@@ -31,7 +31,7 @@ int mat_diff_v2(int** mat, int taille,int V){
     /*On créé un tableau de taille V qu'on remplit de 0*/
     int* tab_comparaison;
     alloue_tableau(&tab_comparaison,V);
-    remplir_tableau(tab_comparaison,V,1);
+    remplir_tableau_avec(tab_comparaison,V,0);
     
     int val_courante;
     for (int i = 0; i < taille; i++){
@@ -48,13 +48,15 @@ int mat_diff_v2(int** mat, int taille,int V){
 
 /*Main permettant comparaison par gnuplot*/
 int main(){
-    int V = 50; //choix 1 : fixer V pour toutes les itérations
+    int V; 
     FILE* fichier = fopen("sortie_vitesse.txt","w");
-    for (int n=10; n < 10000; n = n+100){
+    for (int n=10; n < 10 000; n = n+100){
         /*Création de la matrice*/
         int taille = n;
-        //int V = n*10; //choix 2 : faire varier V selon la taille de la matrice (amène au pire des cas)
         int** mat;
+        V = 10*n*n;                  //On fait une valeur maximale proportionnelle à la taille 
+                                    //de la matrice afin de maintenir une certaine probabilité de 
+                                    //tomber sur des matrices où tous les coefficients sont différents
         alloue_matrice(&mat,taille);
         remplir_matrice(mat,taille,V);
 
