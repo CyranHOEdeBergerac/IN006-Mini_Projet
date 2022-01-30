@@ -27,7 +27,7 @@ int** pdt_mat_v2(int** mat1, int** mat2, int taille){
 	
 	
 	for(int i = 0; i < taille ; i++){
-		for(int j = i ; j < taille ; j++){
+		for(int j = 0 ; j < taille ; j++){
 			coeff = 0;
 			for(int k = j ; k < taille ; k ++){
 				coeff += mat1[i][k]*mat2[k][j];
