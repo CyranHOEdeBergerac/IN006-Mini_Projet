@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 #include "fonctions_tableau.h"
 #include "fonctions_matrice.h"
 
@@ -26,7 +27,8 @@ int mat_diff_v1(int** mat, int taille){
     return 1;
 }
 
-/*meilleure complexité connaissant V : O(n^2)*/
+/*Fonction permettant de vérifier que tous les éléments de la matrice mat sont différents
+en connaissant la valeur V dont tous les élément de mat sont inférieurs.*/
 int mat_diff_v2(int** mat, int taille,int V){
     /*On créé un tableau de taille V qu'on remplit de 0*/
     int* tab_comparaison;
@@ -38,11 +40,14 @@ int mat_diff_v2(int** mat, int taille,int V){
         for (int j = 0; j < taille; j++){
             val_courante = mat[i][j];
             if (tab_comparaison[val_courante] != 0){
+                desalloue_tableau(tab_comparaison);
                 return 0;
             }
             tab_comparaison[val_courante] = 1;
         }
     }
+
+    desalloue_tableau(tab_comparaison);
     return 1;
 }
 
@@ -50,11 +55,12 @@ int mat_diff_v2(int** mat, int taille,int V){
 int main(){
     int V; 
     FILE* fichier = fopen("sortie_vitesse.txt","w");
-    for (int n=10; n < 10 000; n = n+100){
+    for (int n=10; n < 4500; n = n+10){
         /*Création de la matrice*/
         int taille = n;
+        printf("n = %d\n",n);
         int** mat;
-        V = 10*n*n;                  //On fait une valeur maximale proportionnelle à la taille 
+        V = 5*n*n;                  //On fait une valeur maximale proportionnelle à la taille 
                                     //de la matrice afin de maintenir une certaine probabilité de 
                                     //tomber sur des matrices où tous les coefficients sont différents
         alloue_matrice(&mat,taille);
@@ -76,9 +82,7 @@ int main(){
         temps_final = clock();
         temps_algo2 = ((double)(temps_final - temps_initial))/CLOCKS_PER_SEC;
 
-        fprintf(fichier,"%d\t",n);
-        fprintf(fichier,"%f\t",temps_algo1);
-        fprintf(fichier,"%f\n",temps_algo2);
+        fprintf(fichier,"%d\t%f\t%f\n",n,temps_algo1,temps_algo2);
         
         /*Libération de la mémoire*/
         desalloue_matrice(mat,taille);
@@ -86,5 +90,4 @@ int main(){
     /*Fermeture du fichier*/
     fclose(fichier);
 }
-
 
