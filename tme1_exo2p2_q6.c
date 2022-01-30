@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "fonctions_tableau.h"
+#include "fonctions_matrice.h"
 /*On considère que des matrices carrées pour réutiliser nos fonctions*/
 
 /*Fonction calculant le produit de deux matrices carrées en O(n^3)*/
