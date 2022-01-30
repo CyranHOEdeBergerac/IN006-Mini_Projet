@@ -74,7 +74,7 @@ int main(){
 		desalloue_tableau(tab);
 	}
     /*Fermeture du fichier*/
-    fclose("sortie_vitesse.txt");
+    fclose(fichier);
 
 }
 
