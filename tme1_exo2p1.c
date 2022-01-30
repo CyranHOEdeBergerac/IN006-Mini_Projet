@@ -73,6 +73,8 @@ int main(){
 		/*Libération de la mémoire*/
 		desalloue_tableau(tab);
 	}
+    /*Fermeture du fichier*/
+    fclose("sortie_vitesse.txt");
 
 }
 
