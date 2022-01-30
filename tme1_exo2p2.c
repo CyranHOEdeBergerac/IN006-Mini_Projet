@@ -82,7 +82,7 @@ int main(){
         desalloue_matrice(mat,taille);
     }
     /*Fermeture du fichier*/
-    fclose("sortie_vitesse.txt");
+    fclose(fichier);
 }
 
 
