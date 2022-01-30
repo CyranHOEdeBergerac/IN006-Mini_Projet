@@ -7,6 +7,8 @@ int desalloue_tableau(int*t);
 
 void remplir_tableau(int* tab, int taille, int V);
 
+void remplir_tableau_avec(int* tab, int taille, int V);
+
 void afficher_tableau(int* tab, int taille);
 
 int somme_v1(int* tab, int taille);
