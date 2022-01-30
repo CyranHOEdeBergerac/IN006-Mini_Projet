@@ -81,6 +81,8 @@ int main(){
         /*Libération de la mémoire*/
         desalloue_matrice(mat,taille);
     }
+    /*Fermeture du fichier*/
+    fclose("sortie_vitesse.txt");
 }
 
 
