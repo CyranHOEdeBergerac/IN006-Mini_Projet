@@ -5,7 +5,7 @@ const static int len = 10;
 
 int main(void) {
     int *tab;
-    int i;
+    int i;  //On a retiré le unsigned
 
     tab = (int*)malloc(len*sizeof(int));
 
