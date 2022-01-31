@@ -58,7 +58,6 @@ int main(){
     for (int n=10; n < 4500; n = n+10){
         /*Création de la matrice*/
         int taille = n;
-        printf("n = %d\n",n);
         int** mat;
         V = 5*n*n;                  //On fait une valeur maximale proportionnelle à la taille 
                                     //de la matrice afin de maintenir une certaine probabilité de 
