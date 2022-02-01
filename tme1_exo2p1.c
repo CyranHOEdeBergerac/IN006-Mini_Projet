@@ -6,8 +6,7 @@
 #include<assert.h>
 #include "fonctions_tableau.h"
 
-/*2.2*/
-
+/*Fonction calculant la somme des différences des 'el'ements du tableau deux à deux, en 0(n^2*/
 int somme_v1(int* tab,int taille){
 	int res = 0;
 	int val;
@@ -19,10 +18,8 @@ int somme_v1(int* tab,int taille){
 	}
 	return res;
 }
-/*La complexité est bien en O(n**2) : la première boucle fait n opérations,
-et la seconde boucle imbriquée en fait n aussi. Ainsi à chaque itération de
-la première on effectue n opérations.*/
 
+/*Fonction calculant la même somme que somme_v1 mais cette fois en O(n) selon la formule obtenue en 2.2.2(5)*/
 int somme_v2(int* tab, int taille){
 	int somme = 0;
     int somme_carre = 0;
