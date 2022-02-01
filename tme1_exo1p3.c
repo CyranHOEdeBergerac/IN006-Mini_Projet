@@ -29,6 +29,7 @@ void affichageTableau(Tableau* t){
 	printf("]\n");
 }
 
+/*Fonction permettant de libérer toute la mémoire allouée au Tableau t*/
 void libererTableau(Tableau* t){
 	free(t->tab);
 	free(t);
