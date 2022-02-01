@@ -29,7 +29,7 @@ void remplir_tableau_avec (int* tab, int taille, int V){
 	}
 }
 	
-
+/*Fonction permettant d'afficher le tableau d'entiers tab de taille taille passé en paramètres*/
 void afficher_tableau(int* tab, int taille){
 	printf("[ ");
 	for (int i = 0; i<taille; i++){
