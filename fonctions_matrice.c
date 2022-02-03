@@ -29,12 +29,11 @@ int alloue_matrice(int***M, int taille){
 
 /*Fonction permettant de désallouer la matrice*/
 
-int desalloue_matrice(int**mat, int taille){
+void desalloue_matrice(int**mat, int taille){
     for(int i = 0 ; i < taille ; i++){
         desalloue_tableau(mat[i]);
     }
     free(mat);
-    return(mat==NULL);
 }
 
 /*Fonction de remplissage de la matrice avec des entiers aléatoires compris entre 0 et V*/
