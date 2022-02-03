@@ -9,11 +9,22 @@
 
 int alloue_matrice(int***M, int taille){
     int** mat_res = (int**) malloc( taille *sizeof(int*));
+    if(mat_res == NULL){
+        return 0;
+    }
+    int j;
     for(int i = 0 ; i < taille ; i++){
-        alloue_tableau(&mat_res[i],taille);
+        int bonne_allocation = alloue_tableau(&mat_res[i],taille);
+        if(!bonne_allocation){
+            for( j = 0; j < i ; j++){
+                desalloue_tableau(mat_res[j]);
+            }
+            free(mat_res);
+            return 0;
+        }
     }
     *M = mat_res;
-    return (*M !=NULL);
+    return 1;
 }
 
 /*Fonction permettant de désallouer la matrice*/
