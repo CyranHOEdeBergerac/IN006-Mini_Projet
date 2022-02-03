@@ -10,9 +10,8 @@ int alloue_tableau(int** T, int n){
 }
 
 /*Fonction désallouant la mémoire allouée au tableau tab*/
-int desalloue_tableau(int* tab){
+void desalloue_tableau(int* tab){
 	free(tab);
-	return (tab == NULL);
 }
 
 /*Fonction remplissant le tableau tab de taille taille avec des valeurs aléatoires comprises etre 0 et V exclu*/
