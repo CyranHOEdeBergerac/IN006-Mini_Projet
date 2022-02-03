@@ -1,5 +1,5 @@
-#ifndef TME1_EXO2_H
-#define TME1_EXO2_H
+#ifndef FONCTION_TABLEAU
+#define FONCTION_TABLEAU
 
 int alloue_tableau(int** T, int n);
 
