@@ -1,3 +1,3 @@
 # IN006-Mini_Projet
 
-Du coup apparemment c'est là qu'on met nos fichiers pour le projet
+Court projet visant à aborder les problématiques liées à la complexité ainsi que les erreurs fréquentes lors de la manipulation de structures en C
